@@ -20,8 +20,8 @@ public class WebMvcConfig implements WebMvcConfigurer{
     @Override
     public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
         ObjectMapper objectMapper = new ObjectMapper();
-        objectMapper.registerModule(new JavaTimeModule()); // Добавляем модуль для LocalDateTime
-        objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS); // Форматирование дат в ISO-8601
+        objectMapper.registerModule(new JavaTimeModule());
+        objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
 
         MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter(objectMapper);
         converters.add(converter);
