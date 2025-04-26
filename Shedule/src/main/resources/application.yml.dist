@@ -1,0 +1,51 @@
+server:
+  port: 8080
+
+rates:
+  cron: "0 0 8 * * *"
+  test: "0 * * * * *"
+
+currency:
+  api:
+    url: https://data.fixer.io/api
+    key:
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/
+    username:
+    password:
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  liquibase:
+    enabled: false
+
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
+    cache: false
+
+  mail:
+    host: smtp.mail.ru
+    username:
+    password:
+    protocol: smtps
+    port: 465
+    properties:
+      mail:
+        smtp:
+          auth: true
+          connectiontimeout: 10000
+          timeout: 10000
+          writetimeout: 10000
+          starttls:
+            enable: true
+
